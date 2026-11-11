@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cidadania Digital — Manifesto pela Governança Direta</title>
+<meta name="description" content="Manifesto por uma democracia de verdade: chega da política tradicional! Assine, pressione seu representante e conheça projetos que já funcionam." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topo">
+  <a href="#inicio" class="logo">Cidadania<span>Digital</span></a>
+  <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-aberto')">☰</button>
+  <nav>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#adesao">Assine</a>
+    <a href="#pressione">Pressione</a>
+    <a href="#projetos">Projetos Piloto</a>
+    <a href="#contato">Contato</a>
+    <a href="#adesao" class="btn btn-mini">Quero aderir</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-inner">
+    <p class="tag">Manifesto pela Governança Direta</p>
+    <h1>Por uma democracia <em>de verdade</em>.<br/>Chega da política tradicional!</h1>
+    <p class="lead">A tecnologia já existe para pedir comida e transferir dinheiro em segundos. Por que não para decidirmos o destino do país?</p>
+    <div class="hero-cta">
+      <a href="#adesao" class="btn">Assinar o manifesto</a>
+      <a href="#manifesto" class="btn btn-sec">Ler o manifesto</a>
+    </div>
+    <div class="contador-hero"><strong id="heroTotal">0</strong> cidadãos em <strong id="heroCidades">0</strong> cidades já aderiram</div>
+  </div>
+</section>
+
+<!-- ================= MANIFESTO ================= -->
+<section id="manifesto" class="secao manifesto">
+  <div class="container estreito">
+    <p class="tag">Manifesto</p>
+    <h2>Manifesto por uma democracia de verdade: chega da política tradicional!</h2>
+    <p class="dica">💬 Toque ou clique em qualquer frase destacada para enviá-la no WhatsApp ou no X.</p>
+    <div id="barraEdicao" class="barra-edicao" hidden>
+      <strong>Editando o manifesto</strong>
+      <button type="button" data-cmd="frase">✨ Marcar trecho compartilhável</button>
+      <button type="button" data-cmd="desmarcar">Remover marcação</button>
+      <button type="button" data-cmd="bold"><b>N</b></button>
+      <button type="button" data-cmd="h3">Título</button>
+      <button type="button" data-cmd="p">Parágrafo</button>
+      <span class="sep"></span>
+      <button type="button" data-cmd="restaurar">Restaurar original</button>
+      <button type="button" data-cmd="cancelar">Cancelar</button>
+      <button type="button" data-cmd="salvar" class="salvar">Salvar</button>
+    </div>
+    <div id="manifestoConteudo">
+
+    <p class="frase destaque">A política do Brasil quebrou. E não quebrou por falta de dinheiro, de leis ou de discursos bonitos: quebrou porque foi construída de costas para o povo.</p>
+    <p>Nós vencemos eleições na rua, no boca a boca, na conversa de portão, no celular, nas redes sociais. Nós nos organizamos de forma espontânea e poderosa, sem uma central de comando única. Todos unidos com um mesmo objetivo. <span class="frase">Isso mostra para os governantes, líderes e políticos de todas as cores que nós podemos, sim!</span> Mas, no dia seguinte à vitória, o que acontece? Voltamos à velha política tradicional.</p>
+    <p class="frase destaque">Nós estamos aqui para dizer um basta claro e definitivo.</p>
+
+    <h3>O que nós não aguentamos mais</h3>
+    <div class="cards-chega">
+      <article><span class="num">1</span><h4>Chega de sermos lembrados só de 4 em 4 anos</h4>
+        <p>Na época da eleição, o político vem na nossa casa, aperta nossa mão, pede voto, pede militância, chora com a gente e promete o mundo. Quando o resultado sai na urna, os caras somem em gabinetes com ar-condicionado. Para eles, a nossa utilidade acaba no momento em que apertamos a tecla "confirma". <span class="frase">Nós não somos plateia nem massa de manobra.</span></p></article>
+      <article><span class="num">2</span><h4>Chega de ordens de cima para baixo (de quem não entende nada da nossa vida)</h4>
+        <p>Estamos fartos de ver gente eleita que não entende de gestão, não conhece as leis e nunca passou perto de uma fila de posto de saúde ou de um ônibus lotado decidindo os rumos do país. <span class="frase">Pessoas despreparadas são colocadas em cargos gigantescos para controlar bilhões de reais que saem do nosso suor — e decidem o que fazer com a nossa vida sem nunca ter vivido a nossa realidade.</span></p></article>
+      <article><span class="num">3</span><h4>Chega da comunicação de mão única</h4>
+        <p>Eles inventaram um jogo onde eles falam, dão entrevista, fazem propaganda e nós só somos obrigados a ouvir e aceitar. Se a gente reclama nas redes ou nos canais oficiais, recebe de volta um número de protocolo vazio. <span class="frase">Nós não queremos apenas aplaudir, curtir ou engolir discurso pronto: nós temos voz e pensamos por conta própria!</span></p></article>
+      <article><span class="num">4</span><h4>Chega de um mundo onde meia dúzia manda e o resto só obedece</h4>
+        <p>O poder no Brasil virou privilégio de um clube fechado. Eles decidem o orçamento, onde vai o asfalto, o que vai para a escola e o que vai para o bolso deles. <span class="frase">Isso não é democracia; isso é tutela. Nós não nascemos para ser empregados de quem nós mesmos elegemos.</span></p></article>
+    </div>
+
+    <h3>O que nós queremos: o poder na mão de quem vive o país</h3>
+    <p class="frase destaque">O recado é simples e direto: quem ajudou a vencer tem o direito de governar junto!</p>
+    <p>Hoje, qualquer pessoa tem um celular no bolso. <span class="frase">A tecnologia já existe para pedir comida, transferir dinheiro em segundos e conversar com o mundo inteiro. Por que essa mesma tecnologia não é usada para a gente decidir o destino do país?</span></p>
+    <p><strong>Nós queremos:</strong></p>
+    <ul class="queremos">
+      <li><strong>Participar direto das decisões:</strong> Chega de reuniões secretas em Brasília ou nas prefeituras. <span class="frase">Nós queremos plataformas no celular e no bairro onde a população de cada rincão deste país — da periferia das grandes capitais aos sertões e florestas — possa votar diretamente onde e como o dinheiro público deve ser gasto.</span></li>
+      <li><strong>Orçamento aberto e de verdade:</strong> <span class="frase">O dinheiro é nosso. Nós queremos decidir quais obras são prioridade e acompanhar pelo telefone cada centavo investido, em tempo real.</span> Vendo a obra começar e terminar.</li>
+      <li><strong>Escuta ativa com resposta garantida:</strong> Chega de caixa preta e ouvidoria que não serve para nada. <span class="frase">Se o povo propõe uma solução ou denuncia um descaso, o governo tem que responder na hora, prestando contas com clareza.</span></li>
+      <li><strong>Decisão construída junto:</strong> Diante de qualquer grande problema do país, o governo não tem que enfiar um pacote goela abaixo. Mostrem os dados, abram o debate para a sociedade e decidam com quem vai sentir na pele o resultado daquela escolha. <span class="frase">Nós somos muitos e sabemos muito sobre tudo.</span></li>
+    </ul>
+
+    <h3>A nossa mensagem final aos governantes (todos eles!)</h3>
+    <p class="frase destaque grande">Prestem muita atenção: o voto não é um cheque em branco.</p>
+    <p>A força que colocou vocês no governo não nasceu de reuniões de gabinete; nasceu da nossa esperança, da nossa luta diária e da nossa capacidade de nos organizar por conta própria. <span class="frase">Se vocês se trancarem nas paredes do palácio e governarem como a velha política sempre governou, vocês vão ficar sozinhos.</span></p>
+    <p class="frase destaque">Nós não queremos intermediários que falem por nós. Nós queremos falar, participar, ajudar a decidir e construir.</p>
+    <p class="frase destaque grande">Já temos a tecnologia. O povo está acordado. Chega da política tradicional!</p>
+    </div>
+
+    <div class="share-all">
+      <span>Compartilhe o manifesto inteiro:</span>
+      <a class="btn btn-whats" id="shareAllWa" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-x" id="shareAllX" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ADESÃO ================= -->
+<section id="adesao" class="secao adesao">
+  <div class="container">
+    <p class="tag">Abaixo-assinado</p>
+    <h2>Já somos <span id="total">0</span> cidadãos em <span id="cidades">0</span> cidades exigindo governança direta</h2>
+    <div class="adesao-grid">
+      <div id="mapa" class="mapa" aria-label="Mapa de adesões no Brasil"></div>
+      <form id="formAdesao" class="form">
+        <h3>Assine o manifesto</h3>
+        <label>Nome completo<input name="nome" required maxlength="120" /></label>
+        <label>E-mail<input name="email" type="email" required maxlength="160" /></label>
+        <label>Estado<select name="uf" id="selUf" required><option value="">Carregando…</option></select></label>
+        <label>Cidade<select name="cidade" id="selCidade" required disabled><option value="">Escolha o estado primeiro</option></select></label>
+        <label class="check"><input type="checkbox" required /> Concordo com o Manifesto pela Governança Direta e autorizo o uso dos meus dados para esta campanha (LGPD). Apenas meu primeiro nome, a inicial do sobrenome e a cidade aparecerão no mapa; o e-mail nunca é exibido.</label>
+        <button class="btn" type="submit">Assinar agora</button>
+        <p id="msgAdesao" class="msg" role="status"></p>
+      </form>
+    </div>
+    <div id="rankingUf" class="ranking"></div>
+  </div>
+</section>
+
+<!-- ================= PRESSIONE ================= -->
+<section id="pressione" class="secao pressione">
+  <div class="container">
+    <p class="tag">Pressione seu Representante</p>
+    <h2>Cobre quem você elegeu</h2>
+    <p class="lead">Deputados federais e estaduais, senadores, governador, prefeito e vereadores. Digite seu CEP ou escolha estado/cidade e o cargo: geramos uma mensagem padronizada para enviar por e-mail, X ou WhatsApp.</p>
+    <form id="formPressao" class="pressao-busca">
+      <input id="inCep" placeholder="CEP (ex: 01001-000)" maxlength="9" />
+      <span>ou</span>
+      <select id="selUfPressao"><option value="">Estado</option></select>
+      <select id="selCidadePressao" disabled><option value="">Cidade</option></select>
+      <select id="selCargo">
+        <option value="deputados">Deputados federais</option>
+        <option value="senadores">Senadores</option>
+        <option value="estaduais">Deputados estaduais</option>
+        <option value="governador">Governador(a)</option>
+        <option value="prefeito">Prefeito(a)</option>
+        <option value="vereadores">Vereadores</option>
+      </select>
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+    <label class="msg-modelo">Mensagem (você pode editar):
+      <textarea id="txtPressao" rows="3">{cargo} {nome}, eu assinei o Manifesto pela Governança Direta. Qual é o seu compromisso com a participação popular contínua? #CidadaniaDigital</textarea>
+    </label>
+    <p id="msgPressao" class="msg"></p>
+    <div id="listaDeputados" class="deputados"></div>
+  </div>
+</section>
+
+<!-- ================= PROJETOS PILOTO ================= -->
+<section id="projetos" class="secao projetos">
+  <div class="container">
+    <p class="tag">Prova de Conceito</p>
+    <h2>Não é utopia, é técnica.</h2>
+    <p class="lead">Cidades e governos no Brasil e no mundo já usam tecnologias cívicas abertas para que a população decida, colabore e fiscalize pelo celular.</p>
+
+    <div class="abas" role="tablist">
+      <button class="aba ativa" data-aba="casos">Casos reais</button>
+      <button class="aba" data-aba="receber">Para receber</button>
+      <button class="aba" data-aba="propor">Para propor</button>
+      <button class="aba" data-aba="deliberar">Para deliberar</button>
+      <button class="aba" data-aba="caminho">Como levar à sua cidade</button>
+    </div>
+
+    <div class="painel ativo" id="aba-casos">
+      <div class="cards">
+        <article class="card"><div class="flag">🇪🇸</div><h4>Barcelona — o berço do Decidim</h4>
+          <p>A prefeitura criou o Decidim, software livre de participação usado no mundo inteiro. O governo lança planos urbanos na plataforma; os cidadãos apresentam propostas, debatem e votam no orçamento da cidade.</p>
+          <p class="dado">+70% das propostas de investimento público nasceram da votação dos moradores.</p>
+          <a href="https://decidim.org" target="_blank" rel="noopener">decidim.org →</a></article>
+        <article class="card"><div class="flag">🇧🇷</div><h4>Piauí — OP Digital e Blockchain</h4>
+          <p>O estado levou o Orçamento Participativo integralmente para o digital, chegando a Teresina, Parnaíba, Picos, Floriano e Piripiri. Cidadãos propõem e votam prioridades com uma camada de segurança em blockchain.</p>
+          <p class="dado">Dezenas de milhões de reais decididos com foco em mobilidade e urbanização.</p></article>
+        <article class="card"><div class="flag">🇧🇷</div><h4>Brasil Participativo (Federal)</h4>
+          <p>O maior uso do Decidim nas Américas, feito com Dataprev, comunidade Decidim-Brasil e UnB. Qualquer brasileiro com conta Gov.br pôde propor e votar prioridades do PPA pelo celular.</p>
+          <p class="dado">Mobile-first e engajamento digital massivo.</p>
+          <a href="https://brasilparticipativo.presidencia.gov.br" target="_blank" rel="noopener">brasilparticipativo.gov.br →</a></article>
+        <article class="card"><div class="flag">🇹🇼</div><h4>Taiwan — vTaiwan e Pol.is</h4>
+          <p>No impasse sobre a regulamentação do Uber, o governo liberou os dados e abriu o debate no Pol.is. Cidadãos, taxistas e motoristas participaram; a IA encontrou consensos (seguro, licenciamento).</p>
+          <p class="dado">Os consensos digitais viraram lei.</p>
+          <a href="https://pol.is" target="_blank" rel="noopener">pol.is →</a></article>
+        <article class="card"><div class="flag">🏙️</div><h4>Cidades centradas nas pessoas</h4>
+          <p>Curitiba (premiada como cidade mais inteligente do mundo), Niterói (engajamento cívico para sustentabilidade) e Rio de Janeiro (dados abertos para habitação) provam que gestão baseada em dados gera resultados.</p></article>
+      </div>
+    </div>
+
+    <div class="painel" id="aba-receber">
+      <h3>O "Extrato do Dinheiro Público" no celular</h3>
+      <p>Receber notificações automáticas de gastos, como um aplicativo de banco que avisa quando você usa o cartão.</p>
+      <div class="cards">
+        <article class="card"><h4>App Cidadão Transferegov.br</h4><p>Aplicativo oficial (Android e iOS) para acompanhar transferências federais para estados e municípios. Favorite sua cidade e receba notificações sobre obras e convênios.</p></article>
+        <article class="card"><h4>Robôs no WhatsApp/Telegram</h4><p>Desenvolvedores cívicos usam APIs dos Portais da Transparência para postar automaticamente sempre que a prefeitura assina um contrato ou libera verba.</p></article>
+      </div>
+      <div class="alerta-demo">📱 <strong>Exemplo de alerta:</strong> "A prefeitura acaba de pagar R$ 50 mil para a empresa X fornecer merenda para a Escola Y esta semana. Clique aqui se quiser verificar se a comida chegou."</div>
+    </div>
+
+    <div class="painel" id="aba-propor">
+      <h3>O Orçamento Participativo Digital</h3>
+      <div class="cards">
+        <article class="card"><h4>Plataforma Brasil Participativo</h4><p>Cidadãos propõem e votam diretrizes do PPA. Ex.: "Ampliação do hospital regional da cidade X". As mais votadas são analisadas para entrar no orçamento oficial.</p></article>
+        <article class="card"><h4>Apps municipais de zeladoria</h4><p>SP156 em São Paulo ou Colab em várias prefeituras: o cidadão fotografa um buraco, lâmpada queimada ou praça abandonada, gera protocolo georreferenciado e cobra o conserto.</p></article>
+      </div>
+    </div>
+
+    <div class="painel" id="aba-deliberar">
+      <h3>Governo explica o problema, libera os dados, a população opina</h3>
+      <div class="cards">
+        <article class="card"><h4>1. Inteligência coletiva</h4><p><strong>Pol.is</strong> agrupa pessoas por áreas de concordância, não por partido. <strong>Decidim</strong> gerencia todo o ciclo: diagnóstico, assembleias digitais, dados, propostas e votação do texto final.</p></article>
+        <article class="card"><h4>2. Visualização de dados</h4><p>Dashboards e mapas interativos: o cidadão vê no celular o mesmo mapa técnico que o governante, para um debate técnico e não ideológico.</p></article>
+        <article class="card"><h4>3. IA para síntese consultiva</h4><p>Processa milhares de comentários, filtra ofensas e repetições e organiza as demandas: "82% dos moradores do bairro X estão preocupados com a iluminação no ponto Y".</p></article>
+      </div>
+    </div>
+
+    <div class="painel" id="aba-caminho">
+      <h3>Como fazer essa ideia ganhar força na sua cidade</h3>
+      <div class="cards">
+        <article class="card"><h4>Lei de Governança Digital</h4><p>Consultas públicas digitais obrigatórias para gastos acima de determinado valor ou mudanças no plano diretor.</p></article>
+        <article class="card"><h4>Software livre</h4><p>Pol.is e Decidim são abertos e gratuitos: o custo para prefeituras é baixíssimo. Acaba o argumento de que "falta orçamento".</p></article>
+        <article class="card"><h4>Auditorias de transparência</h4><p>Usar a Lei de Acesso à Informação para exigir estudos técnicos antes de contratos e publicá-los em plataformas independentes.</p></article>
+        <article class="card"><h4>OP Digital local</h4><p>Propor, por emendas ou iniciativa popular, que uma porcentagem do orçamento municipal seja decidida em votação direta.</p></article>
+        <article class="card"><h4>Apoiar a Civic Tech</h4><p>Incentivar universidades locais e projetos de dados abertos a desenvolver ferramentas para o município.</p></article>
+      </div>
+      <p class="frase destaque">O celular é a arma mais poderosa que o cidadão moderno tem para combater a corrupção e a ineficiência.</p>
+    </div>
+
+    <div class="ppt">
+      <div><h4>📊 Apresentação completa</h4><p>Cidadania Digital e Orçamento Participativo em Tempo Real</p></div>
+      <a class="btn" href="assets/apresentacao.pptx" download>Baixar apresentação (PPT)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section id="contato" class="secao contato">
+  <div class="container estreito">
+    <p class="tag">Contato</p>
+    <h2>Dúvidas ou sugestões?</h2>
+    <p class="lead">Fale com a equipe do movimento. Responderemos no seu e-mail.</p>
+    <form id="formContato" class="form form-claro">
+      <div class="linha2">
+        <label>Nome<input name="nome" required maxlength="120" /></label>
+        <label>E-mail<input name="email" type="email" required maxlength="160" /></label>
+      </div>
+      <label>Assunto
+        <select name="assunto" required>
+          <option value="">Selecione</option><option>Dúvida</option><option>Sugestão</option><option>Quero ajudar / voluntariado</option><option>Imprensa</option><option>Outro</option>
+        </select></label>
+      <label>Mensagem<textarea name="texto" rows="5" required maxlength="3000"></textarea></label>
+      <button class="btn" type="submit">Enviar mensagem</button>
+      <p id="msgContato" class="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= ADMINISTRAÇÃO (visível em #admin) ================= -->
+<section id="admin" class="secao admin" hidden>
+  <div class="container">
+    <p class="tag">Administração</p>
+    <h2>Área administrativa</h2>
+
+    <div id="adminLogin" class="admin-login">
+      <form id="formLogin" class="form">
+        <h3 id="loginTitulo">Entrar</h3>
+        <p id="loginDica" class="pequeno"></p>
+        <label id="lblNomeAdmin" hidden>Seu nome<input name="nome" maxlength="80" /></label>
+        <label>E-mail<input name="email" type="email" required autocomplete="username" /></label>
+        <label>Senha<input name="senha" type="password" required minlength="8" autocomplete="current-password" /></label>
+        <button class="btn" type="submit" id="btnLogin">Entrar</button>
+        <button class="link" type="button" id="btnPrimeiroAcesso">Primeiro acesso? Criar minha senha</button>
+        <p id="msgLogin" class="msg"></p>
+      </form>
+    </div>
+
+    <div id="adminPainel" hidden>
+      <div class="admin-topo">
+        <span>Olá, <strong id="adminNome"></strong></span>
+        <button class="btn btn-sec btn-mini" id="btnSair">Sair</button>
+      </div>
+      <div class="abas" id="abasAdmin">
+        <button class="aba ativa" data-adm="conteudo">Conteúdo</button>
+        <button class="aba" data-adm="mensagens">Mensagens <span id="badgeMsgs" class="badge"></span></button>
+        <button class="aba" data-adm="admins">Administradores</button>
+        <button class="aba" data-adm="log">Log de ações</button>
+      </div>
+
+      <div class="painel-adm ativo" id="adm-conteudo">
+        <div class="card">
+          <h4>Manifesto</h4>
+          <p>Edite o texto direto na página e escolha quais trechos podem ser compartilhados no WhatsApp e no X.</p>
+          <button class="btn" id="btnEditarManifesto">Editar manifesto</button>
+        </div>
+        <div class="card">
+          <h4>E-mail de agradecimento (enviado a quem adere)</h4>
+          <textarea id="txtEmail" rows="6"></textarea>
+          <div class="dlg-acoes">
+            <button class="btn btn-sec" id="btnRestaurarEmail">Restaurar padrão</button>
+            <button class="btn" id="btnSalvarEmail">Salvar texto</button>
+          </div>
+          <p id="msgEmail" class="msg"></p>
+        </div>
+      </div>
+
+      <div class="painel-adm" id="adm-mensagens">
+        <div class="filtros">
+          <select id="filtroMsgs"><option value="pendentes">Pendentes</option><option value="respondidas">Respondidas</option><option value="todas">Todas</option></select>
+        </div>
+        <div id="listaMsgs"></div>
+      </div>
+
+      <div class="painel-adm" id="adm-admins">
+        <form id="formNovoAdmin" class="form-inline">
+          <input name="nome" placeholder="Nome" required maxlength="80" />
+          <input name="email" type="email" placeholder="E-mail" required />
+          <button class="btn" type="submit">Adicionar administrador</button>
+        </form>
+        <p class="pequeno">A pessoa adicionada cria a própria senha em "Primeiro acesso" na tela de login.</p>
+        <p id="msgAdmins" class="msg"></p>
+        <div id="listaAdmins"></div>
+      </div>
+
+      <div class="painel-adm" id="adm-log">
+        <div class="filtros"><select id="filtroLog"><option value="">Todos os administradores</option></select></div>
+        <div class="tabela-wrap"><table class="tabela"><thead><tr><th>Data e hora</th><th>Administrador</th><th>Ação</th><th>Detalhe</th></tr></thead><tbody id="corpoLog"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <p><strong>Cidadania Digital</strong> — O povo está acordado. Chega da política tradicional!</p>
+  <p class="pequeno">Dados de deputados: Câmara dos Deputados. Senadores: Senado Federal. Localidades e mapa: IBGE. · <a href="#admin" class="link-admin">Área administrativa</a></p>
+</footer>
+
+<!-- Popover de compartilhamento de frase -->
+<div id="sharePop" class="share-pop" hidden>
+  <a id="popWa" target="_blank" rel="noopener" class="btn btn-whats btn-mini">Enviar no WhatsApp</a>
+  <a id="popX" target="_blank" rel="noopener" class="btn btn-x btn-mini">Postar no X/Twitter</a>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js" charset="utf-8"></script>
+<script src="db.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+<script src="admin.js" charset="utf-8"></script>
+</body>
+</html>
